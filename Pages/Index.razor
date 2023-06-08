@@ -1,0 +1,61 @@
+﻿@page "/"
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient Http
+<div class="content">
+    <div class="form">
+        <EditForm Model="form" class="form-field">
+            <DataAnnotationsValidator />
+            <label>
+                Este es el label
+            </label>
+            <input @bind="form.Price" TValue="double" type="number" inputmode="decimal"/>
+            <ValidationMessage For="() => form.Price"></ValidationMessage>
+        </EditForm>
+    </div>
+    <div class="cards">
+        @if (_cards == null)
+        {
+            <p>
+                <em>Loading...</em>
+            </p>
+        }
+        else
+        {
+            foreach (var card in _cards)
+            {
+                <div class="card">
+                    <div class="card-header" style="background-color: @card.Color; color: @card.Text">
+                        <h2>@card.ColorName</h2>
+                    </div>
+                    <div class="card-body"><b>Precio con descuento</b>: @Math.Round(form.Price - (form.Price * card.Discount / 100),2, MidpointRounding.ToZero)</div>
+                </div>
+            }
+        }
+        <card></card>
+    </div>
+</div>
+
+@code
+{
+    private IEnumerable<ColorCard>? _cards;
+    private PriceForm form = new();
+
+    protected override async Task<Task> OnInitializedAsync()
+    {
+        _cards = await Http.GetFromJsonAsync<ColorCard[]>("/sample-data/mockData.json");
+        return base.OnInitializedAsync();
+    }
+
+    private class ColorCard
+    {
+        public string Color { get; set; }
+        public double Discount { get; set; }
+        public string ColorName { get; set; }
+        public string Text { get; set; }
+    }
+    private class PriceForm
+    {
+        [Range(0,10000, ErrorMessage = "No mames es la mega, esta muy caro")]
+        public double Price { get; set; }
+    }
+}
