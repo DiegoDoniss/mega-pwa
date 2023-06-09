@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>megapwa</title>
+    <base href="/" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/app.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="megapwa.styles.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="modal">
+      <span class="loader"></span>
+      </div>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+      navigator.serviceWorker.register("service-worker.js");
+    </script>
+  </body>
+</html>

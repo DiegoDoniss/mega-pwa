@@ -1,0 +1,48 @@
+/* /Pages/Index.razor.rz.scp.css */
+.content[b-lj3d8td2os]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 3rem;
+}
+.form[b-lj3d8td2os]{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    max-width: 80%;
+    width: 40rem;
+}
+.cards[b-lj3d8td2os]{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+    gap: 1rem;
+    width: 100%;
+    margin-top: 3rem;
+    place-items: center;
+}
+.card[b-lj3d8td2os]{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.card-header[b-lj3d8td2os]{
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    padding-top: 1px;
+    text-align: center;
+}
+.card-header> h2[b-lj3d8td2os]{
+ font-size: 18px;
+    font-weight: bolder;
+    margin: 1rem;
+}
+.card-body[b-lj3d8td2os]{
+    padding: 1rem;
+}
+b[b-lj3d8td2os]{
+    font-size: small;
+    font-weight: bolder;
+}
