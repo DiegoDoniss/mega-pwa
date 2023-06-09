@@ -6,7 +6,7 @@
         <EditForm Model="form" class="form-field">
             <DataAnnotationsValidator />
             <label>
-                Este es el label
+                Ingresa el precio del producto
             </label>
             <input @bind="form.Price" TValue="double" type="number" inputmode="decimal"/>
             <ValidationMessage For="() => form.Price"></ValidationMessage>

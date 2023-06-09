@@ -20,6 +20,7 @@
     gap: 1rem;
     width: 100%;
     margin-top: 3rem;
+    place-items: center;
 }
 .card{
     border: 1px solid #ccc;
@@ -29,8 +30,18 @@
 .card-header{
     border-bottom: 1px solid #ccc;
     border-radius: 5px;
-    padding: 1rem;
+    padding-top: 1px;
+    text-align: center;
+}
+.card-header> h2{
+ font-size: 18px;
+    font-weight: bolder;
+    margin: 1rem;
 }
 .card-body{
     padding: 1rem;
+}
+b{
+    font-size: small;
+    font-weight: bolder;
 }
