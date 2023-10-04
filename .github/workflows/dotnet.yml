@@ -11,4 +11,4 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Publish
-      run: dotnet publish -o /opt/www/mega
+      run: dotnet publish --no-restore -o /opt/www/mega
