@@ -27,7 +27,7 @@
                     <div class="card-header" style="background-color: @card.Color; color: @card.Text">
                         <h2>@card.ColorName</h2>
                     </div>
-                    <div class="card-body"><b>Precio con descuento</b>: @Math.Round(form.Price - (form.Price * card.Discount / 100),2, MidpointRounding.ToZero)</div>
+                    <div class="card-body"><b>@card.Discount% de descuento</b>: @Math.Round(form.Price - (form.Price * card.Discount / 100),2, MidpointRounding.ToZero)</div>
                 </div>
             }
         }
@@ -48,10 +48,10 @@
 
     private class ColorCard
     {
-        public string Color { get; set; }
+        public string? Color { get; set; }
         public double Discount { get; set; }
-        public string ColorName { get; set; }
-        public string Text { get; set; }
+        public string? ColorName { get; set; }
+        public string? Text { get; set; }
     }
     private class PriceForm
     {
